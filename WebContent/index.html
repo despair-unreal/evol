@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>恋与制作人官网</title>
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/webCss/index.css" />
+		<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+
+		<!-- 编辑器所需css -->
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link href="css/froala_editor.min.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="loading">
+			<img src="img/load.gif">
+		</div>
+		<div id="onloadcontent" class="container-fluid">
+			<div id="myBtn" onclick="topFunction()"></div>
+			<nav>
+				<div class="container-fluid">
+					<div class="row row-no-gutters">
+						<div id="logo" class="col-md-2 col-md-offset-1 text-center">
+							<a><img src="./img/logo.png"></a>
+						</div>
+						<div class="col-md-7">
+							<!-- style="background-color: #000000;" -->
+							<ul class="list-unstyled">
+								<div class="col-md-2 text-center">
+									<li>
+										<div class="active">
+											<span>首页</span>
+											<span>Top</span>
+										</div>
+									</li>
+								</div>
+								<div class="col-md-2 text-center">
+									<li class="">
+										<div>
+											<span>新闻公告</span>
+											<span>News</span>
+										</div>
+									</li>
+								</div>
+								<div class="col-md-2 text-center">
+									<li class="">
+										<div>
+											<span>故事背景</span>
+											<span>Story</span>
+										</div>
+									</li>
+								</div>
+								<div class="col-md-2 text-center">
+									<li class="">
+										<div>
+											<span>角色介绍</span>
+											<span>Character</span>
+										</div>
+									</li>
+								</div>
+								<div class="col-md-2 text-center">
+									<!-- onclick="window.open('https://evol.papegames.cn/gallery');" -->
+									<li class="">
+										<div>
+											<span>视听站</span>
+											<span>Gallery</span>
+										</div>
+									</li>
+								</div>
+								<div class="col-md-2 text-center">
+									<li class="" onclick="window.open('https://tongren.papegames.cn/');">
+										<div>
+											<span>同人专区</span>
+											<span>Artwork</span>
+										</div>
+									</li>
+								</div>
+							</ul>
+						</div>
+						<div id="music" class="col-md-2 text-center">
+							<img src="img/musicNone.png">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</nav>
+			<div class="container-fluid content">
+				<video id="indexBg" autoplay muted loop>
+					<source src="img/倾色浮影_横版.mp4" type="video/mp4">
+				</video>
+				<div id="downWrap" class="container">
+					<div id="download" class="row row-no-gutters">
+						<div class="col-md-4">
+							<div class="col-md-6">
+								<img src="img/downloadQRcode.png" />
+							</div>
+							<div class="col-md-3 text-center">
+								扫<br />一<br />扫<br />下<br />载<br />游<br />戏
+							</div>
+							<div class="col-md-3">
+								<div id="line"></div>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="col-md-6">
+								<a href="https://20210322.onelink.me/fkaq/5a6cca0b"><img src="img/downloadAndroid.png"></a>
+							</div>
+							<div class="col-md-6 text-right">
+								<a target="_blank" href="https://go.onelink.me/app/d0ad8ea4"><img src="img/downloadIOS.png"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<aside>
+					<div id="asideButton"></div>
+					<div class="asideMsg">
+						<img src="img/wx.png">
+						<p>官方微信</p>
+					</div>
+					<div id="wx"></div>
+					<div class="line2"></div>
+					<div class="asideMsg">
+						<img src="img/wb.png" onclick="window.open('https://weibo.com/u/3248438592');">
+						<p>官方微博</p>
+					</div>
+					<div class="line2"></div>
+					<div class="asideMsg">
+						<img src="img/qq.png">
+						<p>官方Q群</p>
+					</div>
+					<div id="qq"></div>
+					<div class="line2"></div>
+					<div class="asideMsg" onclick="window.open('login.html');">
+						<img src="img/login.png">
+						<p>登录/注册</p>
+					</div>
+				</aside>
+			</div>
+			<div class="container-fluid content">
+				<div class="story_title">
+					<img src="img/news_title.png">
+				</div>
+				<div id="news-bg">
+					<div id="news_detail" style="display: none;" >
+						<div id="news_title">
+							【内附PV】圣祈之音——羽翼之下的秘密，等你寻觅
+						</div>
+						<div id="news_date">
+							2021年10月24日&nbsp;&nbsp;
+							<a class="newsContentEdit" target="_blank" href="NewsContentUpdate">[编辑]</a>
+						</div>
+						<div id="news_content">
+							
+						</div>
+					</div>
+					<table id="newsTable" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col style="width: 13%;" />
+							<col style="width: 66%;" />
+							<col style="width: 21%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<td colspan="2"></td>
+								<td align="center" valign="middle" style="font-weight: 300;padding-top: 30px;">
+									<a href="NewsQuery" target="_blank" class="edit">编辑</a>
+								</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><input type="hidden" name="newsListId" value="111" /><a onclick="gotoDetail(this)" target="_blank">【默契小测试】许墨篇</a></td>
+								<td>2021/06/14</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【凌肖生日庆】读懂情意渐起的生日记忆</a></td>
+								<td>2021/06/14</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【端午福利】把好事包起来，趁着端午送给你</a></td>
+								<td>2021/06/11</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【孤城】全新主线资料片PV公布——黑白游戏，迷雾堙光【孤城】全新主线资料片PV公布——黑白游戏，迷雾堙光【孤城】全新主线资料片PV公布——黑白游戏，迷雾堙光</a></td>
+								<td>2021/06/01</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【超值返利】每日充值回馈，自选ER兑换！</a></td>
+								<td>2021/06/01</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【六一福利】一同分享童心之日的乐趣</a></td>
+								<td>2021/05/30</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【新卡预告】人间有味是清欢</a></td>
+								<td>2021/05/28</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【云朵泡泡】2021儿童节典藏R羁绊免费兑换</a></td>
+								<td>2021/05/27</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【祈愿花事】梦心湖活动羁绊永久复刻</a></td>
+								<td>2021/05/24</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【限定SR+R羁绊】让我占据你人生的所有时刻</a></td>
+								<td>2021/05/14</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【恬香蜜味】520主题纪念R羁绊免费兑换！</a></td>
+								<td>2021/05/12</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【项目合作】公司合作新项目&专家创业玩法上线</a></td>
+								<td>2021/05/10</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【羊皮寻宝】现金抽奖名单公示</a></td>
+								<td>2021/05/06</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【新卡预告】我所有的甜蜜都有你的一半</a></td>
+								<td>2021/04/29</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【馥郁日光】完成每日任务，解锁缤纷好礼！</a></td>
+								<td>2021/04/27</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【内附PV】盛宴热响——吟诵失落咒语，寻觅传说沙洲</a></td>
+								<td>2021/04/26</td>
+							</tr>
+							<tr>
+								<td><span>news</span></td>
+								<td><a href="" target="_blank">【内附PV】盛宴热响——吟诵失落咒语，寻觅传说沙洲</a></td>
+								<td>2021/04/26</td>
+							</tr>
+							<tr>
+								<td><a id="pre">上一页</a></td>
+								<td align="center" id="num">1</td>
+								<td><a id="next">下一页</a></td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+			<div class="container-fluid content">
+				<div id="story-world-bg">
+					<img src="img/story-world.png">
+					<img src="img/story-world-moon.png">
+					<div class="word-txt"></div>
+					<div class="word-txt-bg"></div>
+					<div class="cir"></div>
+					<div class="cir"></div>
+					<div class="cir"></div>
+				</div>
+				<div class="story_title">
+					<img src="img/story_title.png">
+				</div>
+				<div class="story-tabs">
+					<div id="story-tabs-a"></div>
+					<div id="story-tabs-b"></div>
+					<ul id="story-tabs-b-ul" class="list-unstyled">
+						<li class="focus"><span></span><span class="liActive1"></span></li>
+						<li><span></span><span></span></li>
+						<li><span></span><span></span></li>
+						<li><span></span><span></span></li>
+					</ul>
+				</div>
+				<div id="rose">
+					<img src="img/玫瑰.png">
+				</div>
+				<div id="bg-cir">
+					<img src="img/图层1.png">
+					<img src="img/图层2.png">
+				</div>
+				<a href="https://evol.papegames.cn/secondary/index.html#/" target="_blank">
+					<div id="story-secondary"></div>
+				</a>
+			</div>
+			<div class="container-fluid content">
+				<div id="roleBg">
+					<div class="story_title">
+						<img src="img/character_title.png">
+					</div>
+					<div id="lihui"></div>
+					<div id="lihuiRole"></div>
+					<div id="roleDetail"></div>
+					<div id="cg">
+						<img title="点击图片查看人物档案" src="img/CG_xm.jpg">
+					</div>
+					<div id="roleMsg">
+						<img src="img/xm_details.png" title="点击图片关闭人物档案">
+					</div>
+					<div id="role">
+						<img class="roleImg" alt="xm" src="img/xm.png">
+						<img class="roleImg" alt="bq" src="img/bq.png">
+						<img class="roleImg" alt="zql" src="img/zql.png">
+						<img class="roleImg" alt="lzy" src="img/lzy.png">
+						<img class="roleImg" alt="lx" src="img/lx.png">
+					</div>
+					<div id="roleLine">
+						<img src="img/line.png">
+						<img src="img/line.png">
+						<img src="img/line.png">
+						<img src="img/line.png">
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid content">
+				<div id="resource">
+					<div id="gallery_show">
+						<img src="img/gallery_show.png">
+						<div class="bottom_text">
+							彷徨之地
+						</div>
+						<img class="gallery_play" src="img/gallery-first-play.png">
+						<video id="gallery_show_video" controls="controls">
+							<source src="img/倾色浮影_横版.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div id="gallery_list">
+						<div id="gallery_list_tabs">
+							<div class="gallery_list_tabs_change gallery_list_tabs_active">
+								宣传视频
+								<img src="img/gallary_tabs_active.png">
+							</div>
+							<div class="gallery_list_tabs_change">
+								羁绊展示
+								<img src="img/gallary_tabs_active.png" style="display: none;">
+							</div>
+							<div id="gallery_list_tabs_sort">
+								<div id="gallery_list_tabs_sort_a">
+									按时间
+								</div>
+								<div id="gallery_list_tabs_sort_b">
+									换一换
+								</div>
+								<div class="dropdown">
+								  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    新增
+								    <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								    <li><a target="_blank" href="addVideo.html">宣传视频</a></li>
+								    <li role="separator" class="divider"></li>
+								    <li><a target="_blank" href="addCard.html">羁绊展示</a></li>
+								  </ul>
+								</div>
+							</div>
+						</div>
+						<div id="gallery_list_main">
+							<div id="gallery_list_main_video">
+								<div class="gallery_list_content">
+									<img alt="img/倾色浮影_横版.mp4" src="img/gallery_show.png">
+									<div class="bottom_text">
+										彷徨之地
+									</div>
+									<img class="gallery_play" src="img/gallery-first-play.png">
+								</div>
+								<div style="clear: both;"></div>
+							</div>
+							<div id="gallery_list_main_photo">
+								<div class="gallery_list_content">
+									<img data-Id="111" data-cardType="电脑壁纸" alt="img/xm.png" src="img/gallery_show.png">
+									<div class="bottom_text">
+										彷徨地
+									</div>
+								</div>
+								<div class="gallery_list_content">
+									<img alt="img/xm.png" src="img/gallery_show.png">
+									<div class="bottom_text">
+										彷徨之地
+									</div>
+								</div>
+								<div class="gallery_list_content">
+									<img alt="img/xm.png" src="img/gallery_show.png">
+									<div class="bottom_text">
+										彷徨之地
+									</div>
+								</div>
+								<div class="gallery_list_content">
+									<img alt="img/xm.png" src="img/gallery_show.png">
+									<div class="bottom_text">
+										彷徨之地
+									</div>
+								</div>
+								<div class="gallery_list_content">
+									<img alt="img/xm.png" src="img/gallery_show.png">
+									<div class="bottom_text">
+										彷徨之地
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+							</div>
+							<div id="gallery_list_detail">
+								<div id="gallery_list_detail_video">
+									<video controls="controls">
+										<source src="" type="video/mp4">
+									</video>
+									<div class="videoHref">
+										<a class="newsContentEdit videoEdit" target="_blank">[编辑]</a>
+										&nbsp;&nbsp;
+										<a class="newsContentEdit videoDelete" target="_blank">[删除]</a>
+									</div>
+								</div>
+								<div id="gallery_list_detail_photo">
+									<img src="img/xm.png">
+									<img src="img/loadingPhoto.gif" width="32px" style="display: none;" >
+									<div class="photoHref" id="">
+										<a class="newsContentEdit photoEdit" target="_blank">[编辑]</a>
+										&nbsp;&nbsp;
+										<a class="newsContentEdit photoDelete" target="_blank">[删除]</a>
+									</div>
+								</div>
+								<div id="gallery_list_detail_close">
+									<img src="img/close.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<img src="img/footer.jpg" />
+				<div id="copyright" align="center">
+					<span>著作权人：芜湖叠纸网络科技有限公司&nbsp;皖ICP备16013764号-3&nbsp;皖网文（2016）6818-121号 文网游备字 [2017] M-RPG 1512 号 著作登记号：2017SR468901</span><br />
+					<span>出版服务单位：北京中清龙图网络技术有限公司新广出审[2017]8847号 ISBN 978-7-498-01805-2</span><br />
+					<span>COPYRIGHT © 2013-2017 WUHU NIKKI CO., Ltd. ALL RIGHTS RESERVED.</span>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+.table{
+	background-color: rgba(48,75,118,.4);
+	color: #fff;
+	margin: auto;
+	text-align: center;
+	border: 1.5px solid #fff;
+	box-shadow: 0 0 12px #95A3D6 inset,0 0 12px #95A3D6;
+}
+#tdShow video {
+	width: 100%;
+}
+.maxWidth{
+	max-width: 40vw;
+	max-height: 70vh;
+}
+.imgshow{
+}
+
+#tdShow table td {
+	display: none;
+}
+form {
+	width: 85%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#tdShow .table{
+	background-color: transparent;
+	border: none;
+	box-shadow:none;
+	margin-bottom: 0;
+}
+#tdShow .table td{
+	border-top: none;
+}

@@ -1,0 +1,8 @@
+@font-face {
+	font-family: font_e;
+	src: url(font/font_e.ttf);
+}
+
+body {
+	font-family: font_e;
+}

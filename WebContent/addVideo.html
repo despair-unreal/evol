@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>添加宣传视频</title>
+		<link rel="stylesheet" type="text/css" href="./css/webCss/edit.css" />
+		<link rel="stylesheet" type="text/css" href="./css/webCss/addVideo.css" />
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/showVideo.js"></script>
+	</head>
+	<body>
+		<div id="cont">
+			<div class="container">
+				<form action="videoInsert">
+					<table class="table" cellspacing="" cellpadding="">
+						<tr>
+							<td>视频标题</td>
+							<td>日期</td>
+							<td>视频路径</td>
+							<td>封面图路径</td>
+						</tr>
+						<tr>
+							<td>
+								<input class="form-control" type="text" name="videoTitle"
+									placeholder="请输入视频标题" />
+							</td>
+							<td width="15%">
+								<input class="form-control" type="text" name="videoDate"
+									placeholder="请输入日期" />
+							</td>
+							<td>
+								<input style="width: 80%;display: inline-block;" class="form-control" type="text"
+									name="videoPath" placeholder="请输入视频路径（img/showVideo/xx.*）" />
+								<button onclick="showVideo()" id="videoShow" class="form-control" style="width: 15%;display: inline-block;"
+									type="button">预览</button>
+							</td>
+							<td>
+								<input style="width: 80%;display: inline-block;" class="form-control" type="text"
+									name="coverImgPath" placeholder="请输入封面图路径（img/showVideo/xx.*）" />
+								<button class="cardShow form-control" style="width: 15%;display: inline-block;"
+									type="button">预览</button>
+							</td>
+						</tr>
+						<tr style="width: 100%;" id="tdShow" style="display: block;">
+							<td valign="middle" colspan="4">
+								<table class="table" width="100%">
+									<tr>
+										<td>视频</td>
+										<td>封面图</td>
+									</tr>
+									<tr>
+										<td width="50%">
+											<video id="showVideo" controls="controls" muted loop>
+												<source src="" type="video/mp4">
+											</video>
+										</td>
+										<td width="50%">
+											<img class="imgshow" src="" >
+											<img src="img/loadingPhoto.gif" width="32px" style="display: none;" >
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="4">
+								<button style="width: 10%;" class="form-control" type="submit">增加</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

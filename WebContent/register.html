@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/webCss/font.css" />
+	<style>
+				*{padding: 0;margin: 0;overflow: hidden;}
+				.box {
+				    height: 100%;
+				    width: 100%;
+					z-index: -100;
+					position: absolute;
+				}
+				.box video {
+				    height: 100%;
+				    width: 100%;
+				    object-fit: fill;
+					display: block;
+					z-index: -100;
+				}
+				.container{
+					position: fixed;
+					top: 0;
+					right: 0;
+					height: 100%;
+					width: 100%;
+					background-color: rgba(0,0,0,0.4);
+				} 
+				form{
+					height: 85%;
+					width: 30%;
+					background-color: rgba(117,127,187,0.4);
+					border-radius: 10px;
+					box-shadow: rgba(187, 187, 187, 0.5) 0 0px 20px -1px;
+					font: 15px;
+					padding: 30px 30px 20px 30px;
+					color: #EBEBEB;
+				}
+				form table tr td:first-child{
+					width: 20%;
+				}
+				input{font-family: font_e;}
+				input[type="radio"],select{
+					margin:0 5px;
+				}
+				input::-webkit-input-placeholder{
+					color: #ccc;
+				}
+				input[type="text"],input[type="password"],input[type="date"],input[type="number"],input[type="submit"]{
+					color: #ebebeb;
+					line-height: 40px;
+					background: rgba(117,127,187,0);
+					border: none;
+					border-bottom:1px solid rgb(117,127,187);
+					width: 95%;
+					padding-left: 5px;
+					margin-left: 5px;
+				}
+				input[type="submit"]{
+					border-radius: 50px;
+					border: 1px solid rgb(117,127,187);
+					background: rgba(117,127,187,0.4);
+				}
+				select{
+					color: #ebebeb;
+					border: none;
+					height: 30px;
+					border-radius: 5px;
+					background: rgba(117,127,187,0.4);
+					font-family: font_e;
+				}
+				select:hover,input[type="submit"]:hover{
+					background: rgba(117,127,187,0.7);
+					cursor: pointer;
+					box-shadow: rgba(184,173,212, 0.4) 0 0px 15px -1px;
+				}
+				select:hover{box-shadow: none;}
+				select:focus{
+					outline: none;
+					box-shadow: rgba(255, 255, 255, 0.5) 0 0 8px -1px;
+					background: rgba(117,127,187,0.7);
+				}
+				input:focus{
+					outline: none;
+					box-shadow:0px 10px 10px -10px rgb(117,127,187);
+				}
+				span{
+					display: block;
+					float: left;
+					padding-right: 5px;
+					text-align: right;
+					width: 100%;
+				}
+				.c2{
+					width:25%; 
+					font-size: 14px;
+					height:6%; 
+					position: absolute;
+					z-index: 99;
+					left: 41%;
+					top: 175px;
+					text-align: center;
+					vertical-align: middle;
+					display: none;
+					background-color: rgba(0,0,0,0.5);
+					border-radius: 5px;
+				}
+				.c3{
+					width: 0;
+					height: 0;
+					position: absolute;
+					top: 220px;
+					left: 45%;
+					display: none;
+					border-top: 9px solid rgba(0,0,0,0.5);
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+				}
+				#userPwd{
+					top: 225px;
+					text-align: left;
+					padding: 10px;
+				}
+				#userPwd_c3{
+					top: 285px;
+				}
+			</style>
+		</head>
+	
+		<body>
+			<div class="box">
+				<video autoplay muted loop poster="img/first-f.jpg">
+					<source src="img/register.mp4" type="video/mp4">
+					<source src="img/register.webm" type="video/webm">
+					<source src="img/register.ogg" type="video/ogg">
+				</video>
+			</div>
+	
+			<div class="container">
+				
+				<script type="text/javascript">
+					function show(){
+						var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+						var h=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+						
+						var form=document.getElementById('form');
+						var h1=document.getElementById('h1');
+						
+						var fh=form.clientHeight;
+						var fw=form.clientWidth;
+						
+						
+						var top=(h-fh)/2;
+						var left=(w-fw)/2;
+						form.style.marginLeft=left+'px';
+						form.style.marginTop=top+'px';
+						
+					}
+					window.onload=function(){show();};
+					window.onresize=function(){show();};
+				</script>
+				<form action="RegisterServerlet" id="form">
+					<table cellspacing="0" cellpadding="0" height="100%" width="100%">
+						<tbody>
+							<tr>
+								<td colspan="2"><h1 id="h1" style="color: #FFF;text-align: center;font-size: 50px;">欢迎注册</h1></td>
+							</tr>
+							<tr>
+								<div class="c2" id="userName">
+									<p style="display:table-cell;vertical-align: middle;">设置后不可更改,可以为汉字、数字、字母（大小写）、下划线，长度3-16位</p>
+								</div>
+								<div class="c3" id="userName_c3"></div>
+								<td><span>用户名：</span></td>
+								<td><input type="text" placeholder="请设置用户名" name="inputName" id="inputName" required="required" onblur="user_onblur(userName,userName_c3)"
+									 onfocus="user_onfocus(userName,userName_c3)" /></td>
+							</tr>
+							<tr id="errName" style="display: none;">
+								<td></td>
+								<td style="color: red;font-weight: bold;"><div>*用户名格式错误</div></td>
+							</tr>
+							<tr>
+								<div class="c2" id="userPwd">
+									<p style="display:table-cell;vertical-align: middle;">密码长度为8-18位<br/>必须由字母、数字组成，区分大小写</p>
+								</div>
+								<div class="c3" id="userPwd_c3"></div>
+								<td><span>密码：</span></td>
+								<td><input type="password" placeholder="请设置登陆密码" name="inputPwd" id="inputPwd" required="required" onblur="user_onblur(userPwd,userPwd_c3)"
+									 onfocus="user_onfocus(userPwd,userPwd_c3)" /></td>
+							</tr>
+							<tr id="errPwd" style="display: none;">
+								<td></td>
+								<td style="color: red;font-weight: bold;"><div>*密码格式错误</div></td>
+							</tr>
+							<tr>
+								<td><span>性别：</span></td>
+								<td><label><input type="radio" name="sex" checked="checked" />男</label>&nbsp;&nbsp;<label><input type="radio"
+										 name="sex" />女</label></td>
+							</tr>
+							<tr>
+								<td><span>生日：</span></td>
+								<td><input type="date" /></td>
+							</tr>
+							<tr>
+								<td><span>所在地：</span></td>
+								<td>
+									<div style="width: 99%;display: flex;">
+										<select style="flex: 1;">
+											<option value="beijing">中国</option>
+											<option value="hebei">阿尔巴尼亚</option>
+											<option value="henan">阿尔及利亚</option>
+											<option value="shanxi">阿富汗</option>
+											<option value="shandong">阿根廷</option>
+										</select>
+										<select style="flex: 1;">
+											<option value="beijing">北京</option>
+											<option value="shandong">福建</option>
+											<option value="hebei">河北</option>
+											<option value="henan">河南</option>
+											<option value="shanxi">山西</option>
+											<option value="shandong">山东</option>
+										</select>
+										<select style="flex: 1;">
+											<option value="beijing">东城</option>
+											<option value="shandong">泉州</option>
+											<option value="hebei">厦门</option>
+											<option value="henan">漳州</option>
+											<option value="shanxi">莆田</option>
+											<option value="shandong">南平</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><span>手机号码：</span></td>
+								<td><input type="number" placeholder="可用于找回密码" id="inputTel" onblur="user_onblur(userPwd,userPwd_c3)"  required="required"  /></td>
+							</tr>
+							<tr id="errTel" style="display: none;">
+								<td></td>
+								<td style="color: red;font-weight: bold;"><div>*手机号码格式错误</div></td>
+							</tr>
+							<tr>
+								<td><span>验证码：</span></td>
+								<td><input type="number" placeholder="请输入验证码"  style="width: 62%;" required="required"  />&nbsp;<input type="submit" value="获取验证码" style="width: 29%;"  /></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center"><input type="submit" value="注册" /></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center"><input type="checkbox" required="required" /> 我已阅读并同意服务器条款和隐私政策</td>
+							</tr>
+						</tbody>
+					</table>
+	
+				</form>
+			</div>
+			<script>
+				var userName = document.getElementById('userName');
+				var userName_c3 = document.getElementById('userName_c3');
+				var userPwd=document.getElementById('userPwd');
+				var userPwd_c3=document.getElementById('userPwd_c3');
+	
+				function user_onblur(x, y) {
+					x.style.display = 'none';
+					y.style.display = 'none';
+					//用户名验证
+					var regName=new RegExp('^[0-9a-zA-Z\u4e00-\u9fa5_]{3,16}$');
+					if(document.getElementById('inputName').value!=''){
+						if(!regName.test(document.getElementById('inputName').value)){
+							document.getElementById('inputName').value='';
+							document.getElementById('inputName').focus();
+							document.getElementById('errName').style.display='table-row';
+						}else
+							document.getElementById('errName').style.display='none';
+					}
+						
+					//密码验证	
+					var regPwd=new RegExp('^(?![a-zA-Z]+$)(?![0-9]+$)[A-Za-z0-9]{8,18}$');
+					if(document.getElementById('inputPwd').value!=''){
+						if(!regPwd.test(document.getElementById('inputPwd').value)){
+							document.getElementById('inputPwd').value='';
+							document.getElementById('inputPwd').focus();
+							document.getElementById('errPwd').style.display='table-row';
+						}else
+							document.getElementById('errPwd').style.display='none';
+					}
+					
+					//手机号验证
+					var regTel=new RegExp('^1[0-9]{10}$');
+					if(document.getElementById('inputTel').value!=''){
+						if(!regTel.test(document.getElementById('inputTel').value)){
+							document.getElementById('inputTel').value='';
+							document.getElementById('inputTel').focus();
+							document.getElementById('errTel').style.display='table-row';
+						}else
+							document.getElementById('errTel').style.display='none';	
+					}
+					
+				}
+				function user_onfocus(x, y) {
+					x.style.display = 'table';
+					y.style.display = 'block';
+				}
+			</script>
+	
+		</body>
+	
+	</html>
+	

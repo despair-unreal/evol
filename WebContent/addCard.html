@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>添加羁绊图</title>
+		<link rel="stylesheet" type="text/css" href="./css/webCss/edit.css" />
+		<link rel="stylesheet" type="text/css" href="./css/webCss/addVideo.css" />
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/showVideo.js"></script>
+	</head>
+	<body>
+		<div id="cont">
+			<div class="container">
+				<form style="width: 95%;" action="cardInsert">
+					<table class="table" cellspacing="" cellpadding="">
+						<tr>
+							<td>羁绊图标题</td>
+							<td>日期</td>
+							<td>羁绊图类型</td>
+							<td>羁绊图路径</td>
+							<td>封面图路径</td>
+						</tr>
+						<tr>
+							<td>
+								<input class="form-control" type="text" name="cardTitle"
+									placeholder="请输入羁绊图标题" />
+							</td>
+							<td width="15%">
+								<input class="form-control" type="text" name="cardDate"
+									placeholder="请输入日期" />
+							</td>
+							<td>
+								<select class="form-control" name="cardType">
+									<option value="手机壁纸">手机壁纸</option>
+									<option value="电脑壁纸">电脑壁纸</option>
+								</select>
+							</td>
+							<td>
+								<input style="width: 80%;display: inline-block;" class="form-control" type="text"
+									name="cardPath" placeholder="请输入羁绊图路径（img/showCard/xx.*）" />
+								<button class="cardShow form-control" style="width: 15%;display: inline-block;"
+									type="button">预览</button>
+							</td>
+							<td>
+								<input style="width: 80%;display: inline-block;" class="form-control" type="text"
+									name="coverImgPath" placeholder="请输入封面图路径（img/showVideo/xx.*）" />
+								<button class="cardShow form-control" style="width: 15%;display: inline-block;"
+									type="button">预览</button>
+							</td>
+						</tr>
+						<tr style="width: 100%;display: none;" id="tdShow">
+							<td valign="middle" colspan="5">
+								<table class="table" width="100%">
+									<tr>
+										<td>羁绊图</td>
+										<td>封面图</td>
+									</tr>
+									<tr>
+										<td width="50%">
+											<img class="imgshow" src="img/loadingPhoto.gif" >
+											<img src="img/loadingPhoto.gif" >
+										</td>
+										<td width="50%">
+											<img class="imgshow" src="img/loadingPhoto.gif" >
+											<img src="img/loadingPhoto.gif" >
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="5">
+								<button style="width: 10%;" class="form-control" type="submit">增加</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
