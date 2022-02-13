@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class IdentityValidate {
-	public static boolean IdentityValidate(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+	public static boolean IdentityValidateUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		PrintWriter out = response.getWriter();
 		Object obj = session.getAttribute("identity");
@@ -26,7 +26,7 @@ public class IdentityValidate {
 						"	</head>\r\n" + 
 						"	<body>\r\n" + 
 						"		<script type=\"text/javascript\">\r\n" + 
-						"			alert(\"暂无权限！\");\r\n" + 
+						"			alert(\"鐧婚檰鎴愬姛锛乗");\r\n" + 
 						"			window.location.href=\"IndexQuery\"\r\n" + 
 						"		</script>\r\n" + 
 						"	</body>\r\n" + 
@@ -43,7 +43,7 @@ public class IdentityValidate {
 					"	</head>\r\n" + 
 					"	<body>\r\n" + 
 					"		<script type=\"text/javascript\">\r\n" + 
-					"			alert(\"请登录！\");\r\n" + 
+					"			alert(\"璇风櫥褰曪紒\");\r\n" + 
 					"			window.location.href=\"login.html\"\r\n" + 
 					"		</script>\r\n" + 
 					"	</body>\r\n" + 

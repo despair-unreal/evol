@@ -1,9 +1,6 @@
 package com.lianyv.test;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +20,7 @@ public class NewsUpdata extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			MysqlUtil mu = new MysqlUtil("evol", "root", "root");
 			String id = request.getParameter("id");

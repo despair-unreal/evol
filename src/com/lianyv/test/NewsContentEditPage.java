@@ -23,7 +23,7 @@ public class NewsContentEditPage extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			String newsListId = request.getParameter("newsListId");
 			
@@ -36,7 +36,7 @@ public class NewsContentEditPage extends HttpServlet {
 					"<html>\r\n" + 
 					"	<head>\r\n" + 
 					"		<meta charset=\"utf-8\">\r\n" + 
-					"		<title>编辑新闻内容</title>\r\n" + 
+					"		<title>缂栬緫鏂伴椈鍐呭</title>\r\n" + 
 					"		<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/webCss/edit.css\" />\r\n" + 
 					"		<link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">\r\n" + 
 					"		<link href=\"css/froala_editor.min.css\" rel=\"stylesheet\" type=\"text/css\">\r\n" + 
@@ -53,7 +53,7 @@ public class NewsContentEditPage extends HttpServlet {
 					"			<form method=\"post\" id=\"updateForm\" action=\"NewsContentUpdate\">\r\n" + 
 					"				<input type=\"hidden\" name=\"newsId\" value=\""+newsListId+"\" />\r\n" + 
 					"				<input type=\"hidden\" id=\"newsDetailContent\" name=\"newsDetailContent\" value=\"\" />\r\n" + 
-					"				<button type=\"button\">提交修改</button>\r\n" + 
+					"				<button type=\"button\">鎻愪氦淇敼</button>\r\n" + 
 					"			</form>\r\n" + 
 					"\r\n" + 
 					"			<script src=\"js/jquery-1.10.2.min.js\"></script>\r\n" + 
@@ -77,7 +77,7 @@ public class NewsContentEditPage extends HttpServlet {
 					"						alwaysBlank: true\r\n" + 
 					"					})\r\n" + 
 					"					$(\"#updateForm button\").click(function(){\r\n" + 
-					"						if(confirm(\"确认修改？\")){\r\n" + 
+					"						if(confirm(\"纭畾鎻愪氦锛焅")){\r\n" + 
 					"							$(\"#edit>div:eq(1)\").prop(\"contenteditable\",\"false\");\r\n" + 
 					"							var newsDetailContent = $(\"#edit>div:eq(1)\").html();\r\n" + 
 					"							$(\"#newsDetailContent\").val(newsDetailContent);\r\n" + 

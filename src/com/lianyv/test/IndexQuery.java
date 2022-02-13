@@ -38,7 +38,7 @@ public class IndexQuery extends HttpServlet {
 				"		<meta charset=\"utf-8\">\r\n" + 
 				"		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n" + 
 				"		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
-				"		<title>恋与制作人官�?</title>\r\n" + 
+				"		<title>恋与制作人官网</title>\r\n" + 
 				"		<link rel=\"icon\" href=\"favicon.ico\">\r\n" + 
 				"		<link rel=\"stylesheet\" href=\"./css/bootstrap.min.css\">\r\n" + 
 				"		<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/webCss/index.css\" />\r\n" + 
@@ -46,7 +46,7 @@ public class IndexQuery extends HttpServlet {
 				"		<script src=\"./js/bootstrap.min.js\"></script>\r\n" + 
 				"		<script type=\"text/javascript\" src=\"js/index.js\"></script>\r\n" + 
 				"\r\n" + 
-				"		<!-- 编辑器所�?css -->\r\n" + 
+				"		<!-- 编辑器所需css -->\r\n" + 
 				"		<link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">\r\n" + 
 				"		<link href=\"css/froala_editor.min.css\" rel=\"stylesheet\" type=\"text/css\">\r\n" + 
 				"	</head>\r\n" + 
@@ -101,7 +101,7 @@ public class IndexQuery extends HttpServlet {
 				"									<!-- onclick=\"window.open('https://evol.papegames.cn/gallery');\" -->\r\n" + 
 				"									<li class=\"\">\r\n" + 
 				"										<div>\r\n" + 
-				"											<span>视听�?</span>\r\n" + 
+				"											<span>视听站</span>\r\n" + 
 				"											<span>Gallery</span>\r\n" + 
 				"										</div>\r\n" + 
 				"									</li>\r\n" + 
@@ -134,7 +134,7 @@ public class IndexQuery extends HttpServlet {
 				"								<img src=\"img/downloadQRcode.png\" />\r\n" + 
 				"							</div>\r\n" + 
 				"							<div class=\"col-md-3 text-center\">\r\n" + 
-				"								�?<br />�?<br />�?<br />�?<br />�?<br />�?<br />戏\r\n" + 
+				"								扫<br />一<br />扫<br />下<br />载<br />游<br />戏\r\n" + 
 				"							</div>\r\n" + 
 				"							<div class=\"col-md-3\">\r\n" + 
 				"								<div id=\"line\"></div>\r\n" + 
@@ -165,7 +165,7 @@ public class IndexQuery extends HttpServlet {
 				"					<div class=\"line2\"></div>\r\n" + 
 				"					<div class=\"asideMsg\">\r\n" + 
 				"						<img src=\"img/qq.png\">\r\n" + 
-				"						<p>官方Q�?</p>\r\n" + 
+				"						<p>官方Q群</p>\r\n" + 
 				"					</div>\r\n" + 
 				"					<div id=\"qq\"></div>\r\n" + 
 				"					<div class=\"line2\"></div>\r\n" + "");
@@ -177,7 +177,7 @@ public class IndexQuery extends HttpServlet {
 	}else {
 		out.println("					<div class=\"asideMsg\" onclick=\"window.open('DestroySession');\">\r\n" + 
 				"						<img src=\"img/login.png\">\r\n" + 
-				"						<p>�?出登�?</p>\r\n" + 
+				"						<p>退出登录</p>\r\n" + 
 				"					</div>\r\n" + "");
 	}
 	out.println("				</aside>\r\n" + 
@@ -214,9 +214,9 @@ public class IndexQuery extends HttpServlet {
 					"							</tr>");
 		}
 		out.println("<tr>\r\n" + 
-				"								<td><a id=\"pre\">上一�?</a></td>\r\n" + 
+				"								<td><a id=\"pre\">上一页</a></td>\r\n" + 
 				"								<td align=\"center\" id=\"num\">1</td>\r\n" + 
-				"								<td><a id=\"next\">下一�?</a></td>\r\n" + 
+				"								<td><a id=\"next\">下一页</a></td>\r\n" + 
 				"							</tr>\r\n" + 
 				"						</tbody>\r\n" + 
 				"\r\n" + 
@@ -399,8 +399,8 @@ public class IndexQuery extends HttpServlet {
 				"			<footer>\r\n" + 
 				"				<img src=\"img/footer.jpg\" />\r\n" + 
 				"				<div id=\"copyright\" align=\"center\">\r\n" + 
-				"					<span>著作权人：芜湖叠纸网络科�?有限公司&nbsp;皖ICP�?16013764�?-3&nbsp;皖网文（2016�?6818-121�? 文网游备�? [2017] M-RPG 1512 �? 著作登记号：2017SR468901</span><br />\r\n" + 
-				"					<span>出版服务单位：北京中清龙图网络技术有限公司新广出审[2017]8847�? ISBN 978-7-498-01805-2</span><br />\r\n" + 
+				"					<span>著作权人：芜湖叠纸网络科技有限公司&nbsp;皖ICP备16013764号-3&nbsp;皖网文（2016）6818-121号 文网游备字 [2017] M-RPG 1512 号 著作登记号：2017SR468901</span><br />\r\n" + 
+				"					<span>出版服务单位：北京中清龙图网络技术有限公司新广出审[2017]8847号 ISBN 978-7-498-01805-2</span><br />\r\n" + 
 				"					<span>COPYRIGHT © 2013-2017 WUHU NIKKI CO., Ltd. ALL RIGHTS RESERVED.</span>\r\n" + 
 				"				</div>\r\n" + 
 				"			</footer>\r\n" + 

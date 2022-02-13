@@ -47,21 +47,20 @@
 			form.style.marginTop=top+'px';
 			
 		}
-		function login(){
-			var userName=document.getElementById('inputName');
-			var userPwd=document.getElementById('inputPwd');
-			if(userName.value=='空空空'&&userPwd.value=='12345678A'){
-				alert('登录成功');
-				return true;
-			}
-			else{
-				alert('用户名或密码错误');
-				document.getElementById('inputName').value='';
-				document.getElementById('inputPwd').value='';
-				return false;
-			}
-				
-		}
+		// function login(){
+		// 	var userName=document.getElementById('inputName');
+		// 	var userPwd=document.getElementById('inputPwd');
+		// 	if(userName.value=='空空空'&&userPwd.value=='12345678A'){
+		// 		alert('登录成功');
+		// 		return true;
+		// 	}
+		// 	else{
+		// 		alert('用户名或密码错误');
+		// 		document.getElementById('inputName').value='';
+		// 		document.getElementById('inputPwd').value='';
+		// 		return false;
+		// 	}
+		// }
 		function regName(){
 			var regName=new RegExp('^[0-9a-zA-Z\u4e00-\u9fa5_]{3,16}$');
 			if(document.getElementById('inputName').value!=''){

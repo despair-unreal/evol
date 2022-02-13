@@ -20,7 +20,7 @@ public class CardUpdate extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			String id = request.getParameter("id");
 			String cardTitle = request.getParameter("cardTitle");

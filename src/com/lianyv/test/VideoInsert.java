@@ -2,8 +2,6 @@ package com.lianyv.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,12 +17,12 @@ import com.qjm.jdbc.MysqlUtil;
 public class VideoInsert extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			String videoTitle = request.getParameter("videoTitle");
 			String videoPath = request.getParameter("videoPath");
@@ -44,7 +42,7 @@ public class VideoInsert extends HttpServlet {
 					"	</head>\r\n" + 
 					"	<body>\r\n" + 
 					"		<script type=\"text/javascript\">\r\n" + 
-					"			alert(\"ÃÌº”≥…π¶£°\");\r\n" + 
+					"			alert(\"Â¢ûÂä†ÊàêÂäüÔºÅ\");\r\n" + 
 					"			window.location.href=\"IndexQuery\"\r\n" + 
 					"		</script>\r\n" + 
 					"	</body>\r\n" + 

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.qjm.jdbc.MysqlUtil;
 
 /**
  * Servlet implementation class AddVideo
@@ -21,7 +20,7 @@ public class AddVideo extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		
 		if(isAdmin) {
 			PrintWriter out = response.getWriter();

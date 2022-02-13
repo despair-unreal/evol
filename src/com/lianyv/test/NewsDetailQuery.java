@@ -42,9 +42,9 @@ public class NewsDetailQuery extends HttpServlet {
 				"							"+newsList.get(0)[5]+"\r\n" + 
 				"						</div>\r\n" + 
 				"						<div id=\"news_date\">\r\n" + 
-				"							"+array1[0]+"Äê"+array1[1]+"ÔÂ"+array1[2]+"ÈÕ"+"&nbsp;&nbsp;\r\n" + "");
+				"							"+array1[0]+"å¹´"+array1[1]+"æœˆ"+array1[2]+"æ—¥"+"&nbsp;&nbsp;\r\n" + "");
 		if(identity == 0) {
-			out.println("					<a class=\"newsContentEdit\" target=\"_blank\" href=\"NewsContentEditPage?newsListId="+newsListId+"\">[±à¼­]</a>\r\n" + "");
+			out.println("					<a class=\"newsContentEdit\" target=\"_blank\" href=\"NewsContentEditPage?newsListId="+newsListId+"\">[ç¼–è¾‘]</a>\r\n" + "");
 		}			
 	out.println("						</div><input type=\"hidden\" name=\"newsListId\" value=\""+newsListId+"\" />\r\n" + 
 				"						<div id=\"news_content\">\r\n" + 

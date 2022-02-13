@@ -50,7 +50,7 @@ public class LoginServerlet extends HttpServlet {
 					"	</head>\r\n" + 
 					"	<body>\r\n" + 
 					"		<script type=\"text/javascript\">\r\n" + 
-					"			alert(\"µÇÂ¼³É¹¦£¡»¶Ó­ÓÃ»§£º"+name+"\");\r\n" + 
+					"			alert(\"ç™»é™†æˆåŠŸï¼Œç”¨æˆ·ï¼š"+name+"\");\r\n" + 
 					"			window.location.href=\"IndexQuery\"\r\n" + 
 					"		</script>\r\n" + 
 					"	</body>\r\n" + 
@@ -61,7 +61,7 @@ public class LoginServerlet extends HttpServlet {
 		else {
 			out.print("<html>");
 			out.print("<body>");
-			out.print("<a href='login.html'>µÇÂ¼Ê§°Ü£¬µã»÷·µ»Ø</a>");
+			out.print("<a href='login.html'>è´¦å·æˆ–å¯†ç é”™è¯¯ï¼Œç‚¹å‡»é‡æ–°ç™»é™†</a>");
 			out.print("</body>");
 			out.print("</html>");
 		}

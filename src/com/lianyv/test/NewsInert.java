@@ -22,7 +22,7 @@ public class NewsInert extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			MysqlUtil mu = new MysqlUtil("evol", "root", "root");
 			String sql = "insert into newsList value(0,' ',' ',' ')";

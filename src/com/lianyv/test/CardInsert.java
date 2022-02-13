@@ -21,7 +21,7 @@ public class CardInsert extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		
 		if(isAdmin) {
 			String cardTitle = request.getParameter("cardTitle");
@@ -43,7 +43,7 @@ public class CardInsert extends HttpServlet {
 					"	</head>\r\n" + 
 					"	<body>\r\n" + 
 					"		<script type=\"text/javascript\">\r\n" + 
-					"			alert(\"Ìí¼Ó³É¹¦£¡\");\r\n" + 
+					"			alert(\"å¢åŠ æˆåŠŸï¼\");\r\n" + 
 					"			window.location.href=\"IndexQuery\"\r\n" + 
 					"		</script>\r\n" + 
 					"	</body>\r\n" + 

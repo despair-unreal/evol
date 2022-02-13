@@ -22,7 +22,7 @@ public class NewsQuery extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			MysqlUtil mu = new MysqlUtil("evol", "root", "root");
 			String sql = "select * from newsList order by newsDate desc";
@@ -44,7 +44,7 @@ public class NewsQuery extends HttpServlet {
 					"					<tr>\r\n" + 
 					"						<td colspan=\"2\" style=\"font-size: 45px;padding-left: 20px;font-weight: 300;text-shadow: 0 0 15px #95A3D6;\">What's New</td>\r\n" + 
 					"						<td colspan=\"2\" align=\"center\" valign=\"center\" style=\"font-weight: 300;cursor: pointer;\">\r\n" + 
-					"							<a id=\"add\" href=\"NewsInert\" onclick=\"tableAT()\">Ìí¼ÓÒ»ÐÐ</a>\r\n" + 
+					"							<a id=\"add\" href=\"NewsInert\" onclick=\"tableAT()\">æ·»åŠ ä¸€è¡Œ</a>\r\n" + 
 					"						</td>\r\n" + 
 					"					</tr>");
 			for(int i=0;i<newsList.size();i++) {

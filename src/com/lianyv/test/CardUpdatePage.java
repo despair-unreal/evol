@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.qjm.jdbc.MysqlUtil;
 
@@ -24,7 +23,7 @@ public class CardUpdatePage extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			String id = request.getParameter("id");
 			MysqlUtil mu = new MysqlUtil("evol", "root", "root");
@@ -38,7 +37,7 @@ public class CardUpdatePage extends HttpServlet {
 					"		<meta charset=\"utf-8\">\r\n" + 
 					"		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n" + 
 					"		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
-					"		<title>Ìí¼Óî¿°íÍ¼</title>\r\n" + 
+					"		<title>ä¿®æ”¹ç¾ç»Šå›¾</title>\r\n" + 
 					"		<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/webCss/edit.css\" />\r\n" + 
 					"		<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/webCss/addVideo.css\" />\r\n" + 
 					"		<link rel=\"stylesheet\" href=\"./css/bootstrap.min.css\">\r\n" + 
@@ -53,52 +52,52 @@ public class CardUpdatePage extends HttpServlet {
 					"					<input type=\"hidden\" name=\"id\" value=\""+id+"\" />" + 
 					"					<table class=\"table\" cellspacing=\"\" cellpadding=\"\">\r\n" + 
 					"						<tr>\r\n" + 
-					"							<td>î¿°íÍ¼±êÌâ</td>\r\n" + 
-					"							<td>ÈÕÆÚ</td>\r\n" + 
-					"							<td>î¿°íÍ¼ÀàĞÍ</td>\r\n" + 
-					"							<td>î¿°íÍ¼Â·¾¶</td>\r\n" + 
-					"							<td>·âÃæÍ¼Â·¾¶</td>\r\n" + 
+					"							<td>ç¾ç»Šå›¾æ ‡é¢˜</td>\r\n" + 
+					"							<td>æ—¥æœŸ</td>\r\n" + 
+					"							<td>ç¾ç»Šå›¾ç±»å‹</td>\r\n" + 
+					"							<td>ç¾ç»Šå›¾è·¯å¾„</td>\r\n" + 
+					"							<td>å°é¢å›¾è·¯å¾„</td>\r\n" + 
 					"						</tr>\r\n" + 
 					"						<tr>\r\n" + 
 					"							<td>\r\n" + 
 					"								<input class=\"form-control\" type=\"text\" name=\"cardTitle\"\r\n" + 
-					"									value=\""+showCard.get(0)[3]+"\" placeholder=\"ÇëÊäÈëî¿°íÍ¼±êÌâ\" />\r\n" + 
+					"									value=\""+showCard.get(0)[3]+"\" placeholder=\"è¯·è¾“å…¥ç¾ç»Šå›¾æ ‡é¢˜\" />\r\n" + 
 					"							</td>\r\n" + 
 					"							<td width=\"15%\">\r\n" + 
 					"								<input class=\"form-control\" type=\"text\" name=\"cardDate\"\r\n" + 
-					"									value=\""+showCard.get(0)[5]+"\" placeholder=\"ÇëÊäÈëÈÕÆÚ\" />\r\n" + 
+					"									value=\""+showCard.get(0)[5]+"\" placeholder=\"è¯·è¾“å…¥æ—¥æœŸ\" />\r\n" + 
 					"							</td>" +
 					"							<td>\r\n" + 
 					"								<select class=\"form-control\" name=\"cardType\">\r\n" + 
 					"");
-		if(showCard.get(0)[4].equals("ÊÖ»ú±ÚÖ½")) {
-			out.println("<option selected=\"selected\" value=\"ÊÖ»ú±ÚÖ½\">ÊÖ»ú±ÚÖ½</option>\r\n" + 
-					"									<option value=\"µçÄÔ±ÚÖ½\">µçÄÔ±ÚÖ½</option>");
+		if(showCard.get(0)[4].equals("æ‰‹æœºå£çº¸")) {
+			out.println("<option selected=\"selected\" value=\"æ‰‹æœºå£çº¸\">æ‰‹æœºå£çº¸</option>\r\n" + 
+					"									<option value=\"æ‰‹æœºå£çº¸\">æ‰‹æœºå£çº¸</option>");
 		}else {
-			out.println("<option value=\"ÊÖ»ú±ÚÖ½\">ÊÖ»ú±ÚÖ½</option>\r\n" + 
-					"									<option selected=\"selected\" value=\"µçÄÔ±ÚÖ½\">µçÄÔ±ÚÖ½</option>");
+			out.println("<option value=\"ç”µè„‘å£çº¸\">ç”µè„‘å£çº¸</option>\r\n" + 
+					"									<option selected=\"selected\" value=\"ç”µè„‘å£çº¸\">ç”µè„‘å£çº¸</option>");
 		}
 		out.println("								</select>\r\n" + 
 					"							</td>\r\n" + 
 					"							<td>\r\n" + 
 					"								<input style=\"width: 80%;display: inline-block;\" class=\"form-control\" type=\"text\"\r\n" + 
-					"									value=\""+showCard.get(0)[2]+"\" name=\"cardPath\" placeholder=\"ÇëÊäÈëî¿°íÍ¼Â·¾¶£¨img/showCard/xx.*£©\" />\r\n" + 
+					"									value=\""+showCard.get(0)[2]+"\" name=\"cardPath\" placeholder=\"è¯·è¾“å…¥ç¾ç»Šå›¾è·¯å¾„ï¼ˆimg/showCard/xx.*ï¼‰\" />\r\n" + 
 					"								<button class=\"cardShow form-control\" style=\"width: 15%;display: inline-block;\"\r\n" + 
-					"									type=\"button\">Ô¤ÀÀ</button>\r\n" + 
+					"									type=\"button\">é¢„è§ˆ</button>\r\n" + 
 					"							</td>\r\n" + 
 					"							<td>\r\n" + 
 					"								<input style=\"width: 80%;display: inline-block;\" class=\"form-control\" type=\"text\"\r\n" + 
-					"									value=\""+showCard.get(0)[1]+"\" name=\"coverImgPath\" placeholder=\"ÇëÊäÈë·âÃæÍ¼Â·¾¶£¨img/showVideo/xx.*£©\" />\r\n" + 
+					"									value=\""+showCard.get(0)[1]+"\" name=\"coverImgPath\" placeholder=\"è¯·è¾“å…¥å°é¢å›¾è·¯å¾„ï¼ˆimg/showVideo/xx.*ï¼‰\" />\r\n" + 
 					"								<button class=\"cardShow form-control\" style=\"width: 15%;display: inline-block;\"\r\n" + 
-					"									type=\"button\">Ô¤ÀÀ</button>\r\n" + 
+					"									type=\"button\">é¢„è§ˆ</button>\r\n" + 
 					"							</td>\r\n" + 
 					"						</tr>\r\n" + 
 					"						<tr style=\"width: 100%;display: none;\" id=\"tdShow\">\r\n" + 
 					"							<td valign=\"middle\" colspan=\"5\">\r\n" + 
 					"								<table class=\"table\" width=\"100%\">\r\n" + 
 					"									<tr>\r\n" + 
-					"										<td>î¿°íÍ¼</td>\r\n" + 
-					"										<td>·âÃæÍ¼</td>\r\n" + 
+					"										<td>ç¾ç»Šå›¾</td>\r\n" + 
+					"										<td>å°é¢å›¾</td>\r\n" + 
 					"									</tr>\r\n" + 
 					"									<tr>\r\n" + 
 					"										<td width=\"50%\">\r\n" + 
@@ -115,7 +114,7 @@ public class CardUpdatePage extends HttpServlet {
 					"						</tr>\r\n" + 
 					"						<tr>\r\n" + 
 					"							<td align=\"center\" colspan=\"5\">\r\n" + 
-					"								<button style=\"width: 10%;\" class=\"form-control\" type=\"submit\">ĞŞ¸Ä</button>\r\n" + 
+					"								<button style=\"width: 10%;\" class=\"form-control\" type=\"submit\">ä¿®æ”¹</button>\r\n" + 
 					"							</td>\r\n" + 
 					"						</tr>\r\n" + 
 					"					</table>\r\n" + 

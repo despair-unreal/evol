@@ -34,7 +34,7 @@ public class DestroySession extends HttpServlet {
 					"	</head>\r\n" + 
 					"	<body>\r\n" + 
 					"		<script type=\"text/javascript\">\r\n" + 
-					"			alert(\"ÍË³ö³É¹¦£¡\");\r\n" + 
+					"			alert(\"é€€å‡ºæˆåŠŸï¼\");\r\n" + 
 					"			window.location.href=\"IndexQuery\"\r\n" + 
 					"		</script>\r\n" + 
 					"	</body>\r\n" + 

@@ -27,24 +27,33 @@ $(document).ready(function() {
 
 	//导航栏选中
 	$("nav ul>div").click(function() {
-		//修改样式
-		$("nav ul li>div").removeClass("active");
-		$(this).children().children().addClass("active");
-
 		//切换内容页
 		var clickIndex = $("nav ul>div").index(this);
-		$(".content").hide();
-		$(".content:eq(" + clickIndex + ")").show();
-		$("#story-world-bg img:eq(1)").stop();
-		if (clickIndex != 0) {
-			$("nav").css("background-color", 'rgba(255,255,255,0.96)');
-			$("nav li>div").css("color", "#96959D");
-			$(this).children().children().css("color", "#7B9CE3");
-		} else {
-			$("nav").css("background-color", 'rgba(0,0,0,0.5)');
-			$("nav li>div").css("color", "#ebebeb");
-			$(this).children().children().css("color", "#7B9CE3");
+		//修改样式
+		let clickReturn = ()=>{
+			$("nav ul li>div").removeClass("active");
+			$(this).children().children().addClass("active");
+			$(".content").hide();
+			$(".content:eq(" + clickIndex + ")").show();
+
+			if (clickIndex != 0) {
+				$("nav").css("background-color", 'rgba(255,255,255,0.96)');
+				$("nav li>div").css("color", "#96959D");
+				$(this).children().children().css("color", "#7B9CE3");
+			} else{
+				$("nav").css("background-color", 'rgba(0,0,0,0.5)');
+				$("nav li>div").css("color", "#ebebeb");
+				$(this).children().children().css("color", "#7B9CE3");
+			}
 		}
+		if (clickIndex != 5){
+			clickReturn();
+			clickIndex == 0;
+			clickReturn();
+		}
+		$("#story-world-bg img:eq(1)").stop();
+
+		
 
 		if (clickIndex != 2) {
 			$("#newsTable").show();
@@ -82,8 +91,7 @@ $(document).ready(function() {
 		$("#onloadcontent").height($(".content:eq(" + clickIndex + ")").height() + $("footer")
 			.height());
 		$("footer").css("top", $(".content:eq(" + clickIndex + ")").height() - $("#logo").height());
-		/*if (clickIndex == 4 || clickIndex == 5)
-			window.location.reload();*/
+		
 	});
 
 	//首页 下载框部位高度调整 居中

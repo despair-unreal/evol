@@ -24,14 +24,14 @@ public class RegisterServerlet extends HttpServlet {
 		String passWd=request.getParameter("inputPwd");
 		UserInfo u=new UserInfo(userName,passWd);
 		
-		boolean IsSuccess = Register.Register(u);
+		boolean IsSuccess = Register.RegisterSql(u);
 		PrintWriter out = response.getWriter();
 		if(IsSuccess) {
-			out.append("<script>alert('×¢²áÊ§°Ü')</script>");
+			out.append("<script>alert('æ³¨å†ŒæˆåŠŸï¼')</script>");
 			response.sendRedirect("login.html");
 		}
 		else {
-			out.append("<script>alert('×¢²áÊ§°Ü')</script>");
+			out.append("<script>alert('æ³¨å†Œå¤±è´¥ï¼')</script>");
 		}
 		
 	}

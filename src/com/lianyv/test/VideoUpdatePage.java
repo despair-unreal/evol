@@ -22,7 +22,7 @@ public class VideoUpdatePage extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
-		boolean isAdmin = IdentityValidate.IdentityValidate(request,response);
+		boolean isAdmin = IdentityValidate.IdentityValidateUser(request,response);
 		if(isAdmin) {
 			String id = request.getParameter("id");
 			MysqlUtil mu = new MysqlUtil("evol", "root", "root");
@@ -36,7 +36,7 @@ public class VideoUpdatePage extends HttpServlet {
 					"		<meta charset=\"utf-8\">\r\n" + 
 					"		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n" + 
 					"		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
-					"		<title>±à¼­Ğû´«ÊÓÆµ</title>\r\n" + 
+					"		<title>ä¿®æ”¹å®£ä¼ è§†é¢‘</title>\r\n" + 
 					"		<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/webCss/edit.css\" />\r\n" + 
 					"		<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/webCss/addVideo.css\" />\r\n" + 
 					"		<link rel=\"stylesheet\" href=\"./css/bootstrap.min.css\">\r\n" + 
@@ -51,39 +51,39 @@ public class VideoUpdatePage extends HttpServlet {
 					"					<input type=\"hidden\" name=\"id\" value=\""+id+"\" />" + 
 					"					<table class=\"table\" cellspacing=\"\" cellpadding=\"\">\r\n" + 
 					"						<tr>\r\n" + 
-					"							<td>ÊÓÆµ±êÌâ</td>\r\n" + 
-					"							<td>ÈÕÆÚ</td>\r\n" + 
-					"							<td>ÊÓÆµÂ·¾¶</td>\r\n" + 
-					"							<td>·âÃæÍ¼Â·¾¶</td>\r\n" + 
+					"							<td>è§†é¢‘æ ‡é¢˜</td>\r\n" + 
+					"							<td>æ—¥æœŸ</td>\r\n" + 
+					"							<td>è§†é¢‘è·¯å¾„</td>\r\n" + 
+					"							<td>å°é¢å›¾è·¯å¾„</td>\r\n" + 
 					"						</tr>\r\n" + 
 					"						<tr>\r\n" + 
 					"							<td>\r\n" + 
 					"								<input class=\"form-control\" type=\"text\" name=\"videoTitle\"\r\n" + 
-					"								 value=\""+showVideo.get(0)[3]+"\"	placeholder=\"ÇëÊäÈëÊÓÆµ±êÌâ\" />\r\n" + 
+					"								 value=\""+showVideo.get(0)[3]+"\"	placeholder=\"è¯·è¾“å…¥è§†é¢‘æ ‡é¢˜\" />\r\n" + 
 					"							</td>\r\n" + 
 					"							<td width=\"15%\">\r\n" + 
 					"								<input class=\"form-control\" type=\"text\" name=\"videoDate\"\r\n" + 
-					"								 value=\""+showVideo.get(0)[4]+"\"	placeholder=\"ÇëÊäÈëÈÕÆÚ\" />\r\n" + 
+					"								 value=\""+showVideo.get(0)[4]+"\"	placeholder=\"è¯·è¾“å…¥æ—¥æœŸ\" />\r\n" + 
 					"							</td>" +
 					"							<td>\r\n" + 
 					"								<input style=\"width: 80%;display: inline-block;\" class=\"form-control\" type=\"text\"\r\n" + 
-					"									name=\"videoPath\" value=\""+showVideo.get(0)[2]+"\" placeholder=\"ÇëÊäÈëÊÓÆµÂ·¾¶£¨img/showVideo/xx.*£©\" />\r\n" + 
+					"									name=\"videoPath\" value=\""+showVideo.get(0)[2]+"\" placeholder=\"è¯·è¾“å…¥è§†é¢‘è·¯å¾„ï¼ˆimg/showVideo/xx.*ï¼‰\" />\r\n" + 
 					"								<button onclick=\"showVideo()\" id=\"videoShow\" class=\"form-control\" style=\"width: 15%;display: inline-block;\"\r\n" + 
-					"									type=\"button\">Ô¤ÀÀ</button>\r\n" + 
+					"									type=\"button\">é¢„è§ˆ</button>\r\n" + 
 					"							</td>\r\n" + 
 					"							<td>\r\n" + 
 					"								<input style=\"width: 80%;display: inline-block;\" class=\"form-control\" type=\"text\"\r\n" + 
-					"									name=\"coverImgPath\" value=\""+showVideo.get(0)[1]+"\" placeholder=\"ÇëÊäÈë·âÃæÍ¼Â·¾¶£¨img/showVideo/xx.*£©\" />\r\n" + 
+					"									name=\"coverImgPath\" value=\""+showVideo.get(0)[1]+"\" placeholder=\"è¯·è¾“å…¥å°é¢å›¾è·¯å¾„ï¼ˆimg/showVideo/xx.*ï¼‰\" />\r\n" + 
 					"								<button class=\"cardShow form-control\" style=\"width: 15%;display: inline-block;\"\r\n" + 
-					"									type=\"button\">Ô¤ÀÀ</button>\r\n" + 
+					"									type=\"button\">é¢„è§ˆ</button>\r\n" + 
 					"							</td>\r\n" + 
 					"						</tr>\r\n" + 
 					"						<tr style=\"width: 100%;\" id=\"tdShow\" style=\"display: block;\">\r\n" + 
 					"							<td valign=\"middle\" colspan=\"4\">\r\n" + 
 					"								<table class=\"table\" width=\"100%\">\r\n" + 
 					"									<tr>\r\n" + 
-					"										<td>ÊÓÆµ</td>\r\n" + 
-					"										<td>·âÃæÍ¼</td>\r\n" + 
+					"										<td>è§†é¢‘</td>\r\n" + 
+					"										<td>å°é¢å›¾</td>\r\n" + 
 					"									</tr>\r\n" + 
 					"									<tr>\r\n" + 
 					"										<td width=\"50%\">\r\n" + 
@@ -101,7 +101,7 @@ public class VideoUpdatePage extends HttpServlet {
 					"						</tr>\r\n" + 
 					"						<tr>\r\n" + 
 					"							<td align=\"center\" colspan=\"4\">\r\n" + 
-					"								<button style=\"width: 10%;\" class=\"form-control\" type=\"submit\">ĞŞ¸Ä</button>\r\n" + 
+					"								<button style=\"width: 10%;\" class=\"form-control\" type=\"submit\">ä¿®æ”¹</button>\r\n" + 
 					"							</td>\r\n" + 
 					"						</tr>\r\n" + 
 					"					</table>\r\n" + 
